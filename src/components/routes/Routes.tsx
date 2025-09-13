@@ -1,16 +1,19 @@
-import { useRoutes } from "react-router-dom"
-import { path } from "@/constants/application"
-import { Welcome } from "@/components/pages/Welcome"
+import { useRoutes } from 'react-router-dom'
+import { path } from '@/constants/application'
+import { Welcome } from '@/components/pages/Welcome'
+import { Container } from '@/components/layout/Container'
 
 export const Routes = () => {
-    return useRoutes([
+  return useRoutes([
+    {
+      path: path.root(),
+      element: <Container />,
+      children: [
         {
-            path: path.root(),
-            element: <div>Home</div>,
+          path: path.welcome(),
+          element: <Welcome />,
         },
-        {
-            path: path.welcome(),
-            element: <Welcome />,
-        }
-    ])
+      ],
+    },
+  ])
 }

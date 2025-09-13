@@ -1,5 +1,4 @@
 export const path = {
-    root: () => '/',
-    welcome: () => '/welcome',
+  root: () => '/',
+  welcome: () => '/welcome',
 }
-
