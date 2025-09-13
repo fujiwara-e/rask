@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  # API routes
-  namespace :api, defaults: { format: 'json' } do
-    get 'welcome', to: 'welcome#index'
-    resources :tasks, only: %i[index show create update destroy]
-  end
-
   resources :tags
   resources :api_tokens
   resources :projects
@@ -18,6 +12,8 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/login', to: 'sessions#login_with_passwd_auth'
+
+  draw(:api)
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
