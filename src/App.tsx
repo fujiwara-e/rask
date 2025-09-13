@@ -1,11 +1,16 @@
-import { Routes } from "@/components/routes"
-import { BrowserRouter } from "react-router-dom"
+import { Routes } from '@/components/routes'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import { BrowserRouter } from 'react-router-dom'
+import { theme } from '@/constants/theme'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
